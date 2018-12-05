@@ -2,7 +2,7 @@
 12/4/2018
 
 ### Project Title
-Introduction to Version Control	
+Git Project
 
 ### Description
 This is the last project of Programming for Data Science		
