@@ -1,15 +1,20 @@
 ### Date created
-Include the date you created this project and README file.
+12/4/2018
 
 ### Project Title
-Replace the Project Title
+Introduction to Version Control	
 
 ### Description
-Describe what your project is about and what it does
+This is the last project of Programming for Data Science		
 
 ### Files used
-Include the files used
-
+README.md
+.gitignore
+new_york_city.csv
+chicago.csv
+washington.csv
+bikeshare_project1.py
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Youtube: Data Code
+stackoverflow
 
