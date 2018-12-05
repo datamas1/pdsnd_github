@@ -1,5 +1,5 @@
 """
-bikeshare_template.py
+bikeshare_template.py  This program displays US Bikeshare data for Chicago, Washington and New York City
 """
 
 import time
