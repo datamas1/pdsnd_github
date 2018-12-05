@@ -2,10 +2,10 @@
 12/4/2018
 
 ### Project Title
-Git Project
+US Bikeshare System Data 
 
 ### Description
-This is the third project of Programming for Data Science		
+This project displays Bikeshare System data for Chicago, Washington and New York City
 
 ### Files used
 README.md
