@@ -5,7 +5,7 @@
 Git Project
 
 ### Description
-This is the last project of Programming for Data Science		
+This is the third project of Programming for Data Science		
 
 ### Files used
 README.md
