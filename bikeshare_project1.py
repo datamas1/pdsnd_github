@@ -157,22 +157,18 @@ def time_stats(df, month, day, filter):
     if filter == 'none':
        # TO DO: display the most common month
        month_mode = df_month.mode()[0]
-       month_count = df1.groupby('month').count() # get record count of most common month
-       print('Most common month:',get_month_name(month_mode),'| Count:',month_count.loc[month_mode,'Start Time'],'| Filter:',filter)
+       print('Most common month:',get_month_name(month_mode),'| Count:',df1.groupby('month').count().loc[month_mode,'Start Time'],'| Filter:',filter)
        # TO DO: display the most common day of week
        weekday_mode = df_weekday.mode()[0]
-       weekday_count = df1.groupby('weekday').count() # get record count of most common day of week
-       print('Most common day of the week:',get_day_of_week(weekday_mode),'| Count: ',weekday_count.loc[weekday_mode,'Start Time'],'| Filter:',filter)
+       print('Most common day of the week:',get_day_of_week(weekday_mode),'| Count: ',df1.groupby('weekday').count().loc[weekday_mode,'Start Time'],'| Filter:',filter)
     elif filter == 'month':
        weekday_mode = df_weekday.mode()[0]
-       weekday_count = df1.groupby('weekday').count() # get record count of most common day of week
-       print('Most common day of the week:',get_day_of_week(weekday_mode),'| Count: ',weekday_count.loc[weekday_mode,'Start Time'],'| Filter:',filter)
+       print('Most common day of the week:',get_day_of_week(weekday_mode),'| Count: ',df1.groupby('weekday').count().loc[weekday_mode,'Start Time'],'| Filter:',filter)
         
 
     # TO DO: display the most common start hour
     hour_mode = df_hour.mode()[0]
-    hour_count = df1.groupby('hour').count() # get record count of most common hour
-    print('Most common start hour: ',hour_mode,'| Count:',hour_count.loc[hour_mode,'Start Time'],'| Filter:',filter)
+    print('Most common start hour: ',hour_mode,'| Count:',df1.groupby('hour').count().loc[hour_mode,'Start Time'],'| Filter:',filter)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -186,20 +182,17 @@ def station_stats(df,filter):
 
     # TO DO: display most commonly used start station
     start_station_mode = df['Start Station'].mode()[0]
-    start_station_count = df.groupby('Start Station').count()
-    print('Most common Start Station:',start_station_mode,'| Count:',start_station_count.loc[start_station_mode,'Start Time'],'| Filter:',filter)
+    print('Most common Start Station:',start_station_mode,'| Count:',df.groupby('Start Station').count().loc[start_station_mode,'Start Time'],'| Filter:',filter)
 
     # TO DO: display most commonly used end station
     end_station_mode = df['End Station'].mode()[0]
-    end_station_count = df.groupby('End Station').count()
-    print('Most common End Station:  ',end_station_mode,'| Count:',end_station_count.loc[end_station_mode,'Start Time'],'| Filter:',filter)
+    print('Most common End Station:  ',end_station_mode,'| Count:',df.groupby('End Station').count().loc[end_station_mode,'Start Time'],'| Filter:',filter)
 
     # TO DO: display most frequent combination of start station and end station trip
     df1 = df['Start Station'] +' - '+ df['End Station']
     station_mode = df1.mode()[0]
     df1  = df[df['Start Station'] +' - '+ df['End Station']== station_mode]
-    station_count = df1.count()
-    print('Most common Start-End Station:',station_mode,'| Count:',station_count.loc['Start Time'],'| Filter:',filter)
+    print('Most common Start-End Station:',station_mode,'| Count:',df1.count().loc['Start Time'],'| Filter:',filter)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
